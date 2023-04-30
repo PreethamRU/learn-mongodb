@@ -49,3 +49,8 @@ sh.shardCollection("sharddemo.movies",{"title":"hashed"})
 //command to drop index
 db.movies.dropIndex("title_1")
 
+
+//changing chunk size, 1 is in MB, default is 64MB
+db.settings.updateOne( { _id: "chunksize" }, { $set: { _id: "chunksize", value: 1 } },{upsert:true})
+
+
